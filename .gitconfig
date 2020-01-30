@@ -1,0 +1,49 @@
+[user]
+    name = Dan Hopkins
+    email = dan-hopkins@github.com
+[alias]
+    ada = add --all :/
+    st = status -s
+    co = checkout
+    cod = !sh -c 'git checkout `date +%m-%d-%y`'
+    com = checkout master
+    cop = checkout production
+    cb = checkout -b
+    br = branch
+    pl = pull
+    dw = diff -w
+    dni = diff --no-index
+    last = log -1 HEAD
+    cm = commit -m
+    cam = commit -am
+    lc = log ORIG_HEAD.. --stat --no-merges
+    lch = rev-parse HEAD
+    poh = push origin HEAD
+    pom = push origin master
+    ls = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    dlc = diff --cached HEAD^
+    gr = remote show origin
+    sr =!git branch --set-upstream `git rev-parse --abbrev-ref HEAD` origin/`git rev-parse --abbrev-ref HEAD`
+    nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
+    fnuke = !sh -c 'git branch -D $1 && git push origin :$1' -
+    pr = pull --rebase
+    prom = pull --rebase origin master
+    prop = pull --rebase origin production
+    f = fetch origin
+    rbp = rebase -p origin master
+    rbi = rebase -i
+    tb = !sh -c 'git-tagger -o -e -t `git rev-parse HEAD`'
+    tbx = !sh -c 'git-tagger -o -e -x -t `git rev-parse HEAD`'
+    rim = rebase -i master
+    sup = !sh -c 'git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
+    graph = log --graph --all --decorate --stat --date=iso
+    tags = !sh -c 'git tag | sort -t "." -k1,1n -k2,2n -k3,3n'
+    dno = diff master --name-only
+    dfo = !sh -c 'git diff origin/`git rev-parse --abbrev-ref HEAD`'
+[push]
+    default = simple
+[tag]
+	sort = version:refname
+[gc]
+	auto = 0

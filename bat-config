@@ -1,0 +1,8 @@
+# Set the theme to "TwoDark"
+--theme "TwoDark"
+
+# Show line numbers and Git modifications (but no grid or header)
+--style "numbers,changes"
+
+# Use "gitignore" highlighting for ".dockerignore" files
+--map-syntax .dockerignore:.gitignore
